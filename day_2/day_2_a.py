@@ -2,19 +2,17 @@ with open("input.txt") as f:
 
     validPwds = 0
     for line in f:
-        policy = line.split(":")[0]
-        pwd = line.split(":")[1][1:-1]
-        limits = policy.split(" ")[0]
-        letter = policy.split(" ")[1]
-        lower_limit = int(limits.split("-")[0])
-        upper_limit = int(limits.split("-")[1])
+        line = line.replace("-", " ")
+        line = line.replace(":", "")
+        line = line.split(" ")
+        lower_limit, upper_limit, letter, pwd = line
 
         count = 0
         for char in pwd:
             if char == letter:
                 count += 1
 
-        if count >= lower_limit and count <= upper_limit:
+        if count >= int(lower_limit) and count <= int(upper_limit):
             validPwds += 1
 
     print(validPwds)
