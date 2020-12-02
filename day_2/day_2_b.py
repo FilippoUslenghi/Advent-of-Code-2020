@@ -5,9 +5,9 @@ with open("input.txt") as f:
         line = line.replace("-", " ")
         line = line.replace(":", "")
         line = line.split(" ")
-        a, b, letter, pwd = line
+        first_position, second_position, letter, pwd = line
         
-        if (letter == pwd[int(a)-1]) ^ (letter == pwd[int(b)-1]):
+        if (letter == pwd[int(first_position)-1]) ^ (letter == pwd[int(second_position)-1]):
             validPwds += 1
 
     print(validPwds)
