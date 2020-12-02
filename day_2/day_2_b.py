@@ -9,7 +9,7 @@ with open("input.txt") as f:
         a = int(limits.split("-")[0])
         b = int(limits.split("-")[1])
 
-        if letter == pwd[a-1] and letter != pwd[b-1] or letter != pwd[a-1] and letter == pwd[b-1]:
+        if (letter == pwd[a-1]) ^ (letter == pwd[b-1]):
             validPwds += 1
 
     print(validPwds)
