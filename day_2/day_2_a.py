@@ -1,5 +1,4 @@
 with open("input.txt") as f:
-
     validPwds = 0
     for line in f:
         line = line.replace("-", " ")
@@ -12,7 +11,7 @@ with open("input.txt") as f:
             if char == letter:
                 count += 1
 
-        if count >= int(lower_limit) and count <= int(upper_limit):
+        if int(lower_limit) <= count <= int(upper_limit):
             validPwds += 1
 
     print(validPwds)
