@@ -21,3 +21,4 @@ with open("input.txt") as f:
         groupAnswer = groupAnswer.intersection(s)
 
     print(sum)
+ 
